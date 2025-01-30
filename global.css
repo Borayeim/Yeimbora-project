@@ -1,0 +1,67 @@
+@font-face {
+    font-family: "plus-medium";
+    src: url(../src/fonts/PlusJakartaSans-Medium.woff2);
+}
+
+:root {
+    --bg: #06080d;
+    --bg2: #0f0715;
+
+    --text: #e5e5e5;
+    --primary: #8750f7;
+    --primary2: #ff9500;
+    --secondary: #2a1454;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "plus-medium", sans-serif;
+    border: none;
+    background: none;
+    outline: none;
+    text-decoration: none;
+    transition: ease-in-out .5s all;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* hero-title */
+.hero-title {
+    font-size: 50px;
+    background: var(--primary);
+    background: -webkit-gradient(linear, left top, right top, from(var(--primary)), to(var(--text)));
+    background: -o-linear-gradient(left, var(--primary) 0%, var(--text) 100%);
+    background: linear-gradient(to right, var(--primary) 0%, var(--text) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: .8rem auto;
+    text-transform: capitalize;
+}
+
+/* hero-subtitle */
+.hero-subtitle {
+    background: var(--primary2);
+    background: -webkit-gradient(linear, left top, right top, from(var(--primary2)), to(var(--secondary)));
+    background: -o-linear-gradient(left, var(--primary2) 0%, var(--secondary) 100%);
+    background: linear-gradient(to right, var(--primary2) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+/* hero-lead */
+.hero-lead {
+    color: #b1a7a6;
+    word-spacing: .2rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: .8rem auto;
+}
+
+/* media */
