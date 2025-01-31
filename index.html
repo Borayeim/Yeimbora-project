@@ -751,6 +751,52 @@
 
     <!-- scripts -->
     <script src="app.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <!-- Include EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS with your Public Key
+    (function () {
+      emailjs.init({
+        publicKey: "eLRhYf0hATo7qPzqH", // ជំនួស YOUR_PUBLIC_KEY ដោយ Public Key របស់អ្នក
+      });
+    })();
+
+    // Handle form submission
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // Get form data
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+
+      // Send email using EmailJS
+      emailjs.send('service_ep5msmt', 'template_77la8s8', {
+        from_name: name,
+        from_email: email,
+        from_phone: phone,
+        message: message,
+      })
+        .then(function (response) {Swal.fire({
+  title: "Success!",
+  text: "Message sent successfully!",
+  icon: "success"
+});
+          responseMessage.classList.add('show'); // Add animation class
+
+// Play sound
+const audio = new Audio('https://www.soundjay.com/buttons/sounds/button-37.mp3'); // Replace with your sound file
+audio.play();
+
+// Reset form
+document.getElementById('contactForm').reset();
+}, function (error) {
+document.getElementById('responseMessage').textContent = 'Failed to send message. Please try again.';
+});
+});
+</script>
 </body>
 
 </html>
