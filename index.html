@@ -714,34 +714,30 @@
         </div>
 
         <h4 class="hero-subtitle">Message</h4>
-        <div class="wrapper" action="message.php" method="post">
-            <header>Send us a Message</header>
-            <form action="#">
-              <div class="dbl-field">
-                <div class="field">
-                  <input type="text" name="name" placeholder="Enter your name">
-                  <i class='fas fa-user'></i>
-                </div>
-                <div class="field">
-                  <input type="text" name="email" placeholder="Enter your email">
-                  <i class='fas fa-envelope'></i>
-                </div>
+       <div class="contact-form">
+           
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
               </div>
-              <div class="dbl-field">
-                <div class="field">
-                  <input type="text" name="phone" placeholder="Enter your phone">
-                  <i class='fas fa-phone-alt'></i>
-                </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
               </div>
-              <div class="message">
-                <textarea placeholder="Write your message" name="message"></textarea>
-                <i class="material-icons"></i>
+              <div class="form-group">
+                <label for="phone">Phone:</label>
+                
+                <input id="phone" id="phone"name="phone" required>
               </div>
-              <div class="button-area">
-                <button type="submit">Send Message</button>
-                <span></span>
+              <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
               </div>
+              
+              <button type="submit" class="btn">Send</button>
             </form>
+            <p id="responseMessage"></p>
           </div>
     </section>
 
